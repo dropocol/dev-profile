@@ -4,15 +4,9 @@
 alias lsa='ls -a'
 
 
-
-
 #--------------------------------------
-kill(){
-    port=$(lsof -t -i:$1)
-    echo $port
-    if [ ! -z "$port" ] &&  [ "$port" != "" ] ; then
-        sudo kill -9 $port
-    fi
+ba(){
+  source ~/.bash_aliases
 }
 
 
@@ -96,4 +90,16 @@ mongodb-status(){
 
 
 
+
+
+
+#--------------------------------------
+
+kill(){
+    port=$(lsof -t -i:$1)
+    echo $port
+    if [ ! -z "$port" ] &&  [ "$port" != "" ] ; then
+        sudo kill -9 $port
+    fi
+}
 
