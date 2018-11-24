@@ -32,7 +32,7 @@ dt(){
 dp(){
   cd ~/zk-scripts/dev-profile
   pull
-  src
+  #src
 }
 
 
