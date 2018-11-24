@@ -12,7 +12,7 @@ alias .....='cd ../../../../..'
 
 #--------------------------------------
 src(){
-  source ~/.bash_aliases
+  . ~/.bash_aliases
 }
 
 
@@ -21,12 +21,14 @@ src(){
 dt(){
   cd ~/zk-scripts/dev-tools
   pull -i
+  src
 }
 
 
 dp(){
   cd ~/zk-scripts/dev-profile
   pull
+  src
 }
 
 
