@@ -78,10 +78,6 @@ redis-status(){
   sudo service redis status
 }
 
-redis-cli(){
-  redis-cli
-}
-
 redis-cli-stop(){
   redis-cli shutdown
 }
