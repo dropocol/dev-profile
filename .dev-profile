@@ -2,10 +2,16 @@
 #---------------Common-----------------
 #--------------------------------------
 alias lsa='ls -a'
+alias .='cd ..'
+alias ..='cd ../..'
+alias ...='cd ../../..'
+alias ....='cd ../../../..'
+alias .....='cd ../../../../..'
+
 
 
 #--------------------------------------
-ba(){
+src(){
   source ~/.bash_aliases
 }
 
@@ -15,6 +21,12 @@ ba(){
 dt(){
   cd ~/zk-scripts/dev-tools
   pull -i
+}
+
+
+dp(){
+  cd ~/zk-scripts/dev-profile
+  pull
 }
 
 
