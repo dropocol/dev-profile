@@ -12,7 +12,7 @@ alias .....='cd ../../../../..'
 
 #--------------------------------------
 src(){
-  . ~/.bash_aliases
+  source ~/.bash_aliases
 }
 
 rmlock(){
