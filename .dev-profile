@@ -3,6 +3,7 @@
 #--------------------------------------
 alias la='ls -a'
 alias ll='ls -al'
+alias cl='clear'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
