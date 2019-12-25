@@ -1,3 +1,16 @@
+DP_DIR=""
+MAIN_OS=""
+
+if [ "$(uname)" = "Darwin" ]; then
+  DP_DIR=$(cd "$(dirname "$0")"; pwd)
+  MAIN_OS="OSX"
+elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
+  DP_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+  MAIN_OS="Linux"
+fi
+
+
+
 #--------------------------------------
 #---------------Common-----------------
 #--------------------------------------
@@ -14,15 +27,21 @@ alias ......="cd ../../../../.."
 
 #--------------------------------------
 src(){
+  if [ "$MAIN_OS" = "OSX" ]; then
+  . ~/.zshrc
+  elif [ "$MAIN_OS" = "Linux" ]; then
   . ~/.bashrc
+  fi
 }
 
 
 
 rmlock(){
-  sudo rm /var/lib/apt/lists/lock
-  sudo rm /var/cache/apt/archives/lock
-  sudo rm /var/lib/dpkg/loc
+  if [ "$MAIN_OS" = "Linux" ]; then
+    sudo rm /var/lib/apt/lists/lock
+    sudo rm /var/cache/apt/archives/lock
+    sudo rm /var/lib/dpkg/loc
+  fi
 }
 
 #--------------------------------------
@@ -56,6 +75,22 @@ pull(){
   fi
 }
 
+
+
+#--------------------------------------
+#---------------Postgresql------------------
+#--------------------------------------
+
+psql-start(){
+  if [ "$MAIN_OS" = "OSX" ]; then
+    brew services start postgresql
+  fi
+ 
+}
+
+
+
+brew services start postgresql
 
 
 

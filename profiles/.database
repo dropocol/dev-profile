@@ -1,0 +1,45 @@
+#--------------------------------------
+#---------------Redis------------------
+#--------------------------------------
+
+redis-start(){
+  sudo service redis start
+}
+
+redis-stop(){
+  sudo service redis stop
+}
+
+redis-restart(){
+  sudo service redis restart
+}
+
+redis-status(){
+  sudo service redis status
+}
+
+redis-cli-stop(){
+  redis-cli shutdown
+}
+
+
+#--------------------------------------
+#--------------MongoDB-----------------
+#--------------------------------------
+
+
+mongodb-start(){
+  sudo service mongod start
+}
+
+mongodb-restart(){
+  sudo service mongod restart
+}
+
+mongodb-stop(){
+  sudo service mongod stop
+}
+
+mongodb-status(){
+  sudo service mongod status
+}
