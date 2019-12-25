@@ -11,6 +11,7 @@ fi
 
 
 source $DP_DIR/profiles/.database
+source $DP_DIR/profiles/.feedbin
 
 
 #--------------------------------------

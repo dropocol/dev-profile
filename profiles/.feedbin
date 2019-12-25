@@ -1,0 +1,12 @@
+feedbin-start(){
+    redis-start
+    es-start
+}
+
+#--------------------------------------
+
+
+feedbin-stop(){
+    redis-stop
+    es-stop
+}

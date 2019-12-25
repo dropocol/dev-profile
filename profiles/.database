@@ -3,7 +3,6 @@
 #--------------------------------------
 
 redis-start(){
-  echo "I am here"
   if [ "$MAIN_OS" = "OSX" ]; then
     brew services start redis
   elif [ "$MAIN_OS" = "Linux" ]; then
@@ -12,20 +11,94 @@ redis-start(){
 }
 
 redis-stop(){
-  sudo service redis stop
+    if [ "$MAIN_OS" = "OSX" ]; then
+    brew services stop redis
+  elif [ "$MAIN_OS" = "Linux" ]; then
+    sudo service redis stop
+  fi
 }
 
 redis-restart(){
-  sudo service redis restart
-}
-
-redis-status(){
-  sudo service redis status
+  if [ "$MAIN_OS" = "OSX" ]; then
+    brew services restart redis
+  elif [ "$MAIN_OS" = "Linux" ]; then
+    sudo service redis restart
+  fi
 }
 
 redis-cli-stop(){
   redis-cli shutdown
 }
+
+
+
+
+#--------------------------------------
+#---------------Postgresql-------------
+#--------------------------------------
+
+psql-start(){
+  brew services start postgresql
+}
+
+psql-stop(){
+  brew services stop postgresql
+}
+
+
+
+#--------------------------------------
+#---------------Memcached--------------
+#--------------------------------------
+
+mem-start(){
+  brew services start memcached
+}
+
+mem-stop(){
+  brew services stop memcached
+}
+
+
+#--------------------------------------
+#---------------Elasticsearch----------
+#--------------------------------------
+
+es-start(){
+  brew services start elastic/tap/elasticsearch-full
+}
+
+es-stop(){
+  brew services stop elastic/tap/elasticsearch-full
+}
+
+
+
+#--------------------------------------
+#-------------RethinkDB----------------
+#--------------------------------------
+
+rethinkdb-start(){
+  brew services start rethinkdb
+  #'launchctl load /usr/local/opt/rethinkdb/homebrew.mxcl.rethinkdb.plist'
+}
+
+rethinkdb-stop(){
+  brew services stop rethinkdb
+  #launchctl unload /usr/local/opt/rethinkdb/homebrew.mxcl.rethinkdb.plist'
+}
+
+rethinkdb-restart(){
+  brew services restart rethinkdb
+  #'launchctl load /usr/local/opt/rethinkdb/homebrew.mxcl.rethinkdb.plist'
+}
+
+rethinkdb-status(){
+  brew services status rethinkdb
+}
+
+
+
 
 
 #--------------------------------------
