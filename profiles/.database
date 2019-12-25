@@ -3,7 +3,12 @@
 #--------------------------------------
 
 redis-start(){
-  sudo service redis start
+  echo "I am here"
+  if [ "$MAIN_OS" = "OSX" ]; then
+    brew services start redis
+  elif [ "$MAIN_OS" = "Linux" ]; then
+    sudo service redis start
+  fi
 }
 
 redis-stop(){
