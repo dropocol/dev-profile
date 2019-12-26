@@ -65,11 +65,13 @@ mem-stop(){
 #--------------------------------------
 
 es-start(){
-  brew services start elastic/tap/elasticsearch-full
+  #brew services start elastic/tap/elasticsearch-full
+  brew services start elasticsearch@2.4
 }
 
 es-stop(){
-  brew services stop elastic/tap/elasticsearch-full
+  #brew services stop elastic/tap/elasticsearch-full
+  brew services stop elasticsearch@2.4
 }
 
 

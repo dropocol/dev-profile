@@ -1,6 +1,19 @@
 feedbin-start(){
+    
+    cd ~/tools/feedbin/feedbin
     redis-start
     es-start
+    psql-start
+    mc-start
+    
+    #$ cd ~/.pow
+    #$ ln -s /path/to/myapp feedbin
+    #$ open http://feedbin.test/    
+
+    bundle exec foreman start
+
+    echo "Feedbin is running"
+
 }
 
 #--------------------------------------
@@ -9,4 +22,8 @@ feedbin-start(){
 feedbin-stop(){
     redis-stop
     es-stop
+    psql-stop
+    mc-stop
+
+    #kill $(ps aux | grep -E 'clockwork|sidekiq|foreman' | grep -v grep | awk '{print $2}')
 }
