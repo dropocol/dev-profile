@@ -10,11 +10,12 @@ feedbin-start(){
 #--------------------------------------
 
 feedbin-stop(){
-    tmux kill-session -t feedbin
+    pkill ruby
     redis-stop
     es-stop
     psql-stop
     mem-stop
     pm2 stop server
+    tmux kill-session -t feedbin
 }
 
