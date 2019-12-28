@@ -18,7 +18,3 @@ feedbin-stop(){
     pm2 stop server
 }
 
-
-for pid in $(ps -ef | grep "sidekiq" | awk '{print $2}'); do kill $pid; done
-
-redis|sidekiq|unicorn|worker|worker_slow|clock
